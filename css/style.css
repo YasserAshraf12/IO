@@ -1,0 +1,300 @@
+/* Start Variables */
+:root{
+    --main-color: #39D3C3;
+}
+/* End Variables */
+
+/* Global Rules */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+/* End Global Rules */
+
+
+/* Start Layout Containers */
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+/*@media (min-width: 450px){
+    .container{
+        width: 400px;
+    }
+}*/
+
+
+/* Small */
+@media screen and (max-width: 768px){
+    .container{
+        width: calc(100% - 20px);
+    }
+}
+
+/* Meduim */
+@media screen and (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+/* Large */
+@media screen and (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/* End Layout Containers */
+
+/* Start Header */
+
+.header{
+    padding: 20px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 60px;
+}
+
+.header .container .links{
+    position: relative;
+}
+
+.menu-button{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-button span{
+    background-color: #333;
+    margin-bottom: 5px;
+}
+
+.menu-button span:first-child{
+    height: 3px;
+    width: 100%;
+}
+
+.menu-button span:nth-child(2){
+    height: 3px;
+    width: 70%;
+    transition: .3s;
+}
+
+.menu-button span:nth-child(3){
+    height: 3px;
+    width: 50%;
+    transition: .4s;
+}
+
+.menu-button span:nth-child(4){
+    height: 3px;
+    width: 100%;
+}
+
+.menu-button:hover{
+    cursor: pointer;
+}
+
+.links:hover span:nth-child(2), .links:hover span:nth-child(3){
+    width: 100%;
+}
+
+.menu-list::before{
+    content: '';
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent rgb(248, 248, 248) transparent;
+    position: absolute;
+    right: 0px;
+    top: -30px;
+}
+
+.menu-list{
+    list-style-type: none;
+    background-color: rgb(248, 248, 248);
+    width: 150px;
+    margin: 0;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    display: none;
+    transition: .5s;
+    z-index: 1;
+}
+.menu-list .entry{
+    color: #333;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.menu-list .entry:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+
+.menu-list .entry .link{
+    color: #333;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.menu-list .link:hover {
+    padding-left: 15px;
+}
+
+.container .links:hover .menu-list{
+    display: block;
+}
+
+/* End Header */
+
+
+/* Start Landing Section */
+.landing{
+    padding: 0;
+    margin: 0;
+    background-image: url('../images/landing.jpg');
+    background-size: cover;
+    height: calc(100vh - 72px);
+    position: relative;
+}
+.landing .intro-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 450px;
+    max-width: 100%;
+}
+
+.landing .intro-text h1{
+    color: var(--main-color);
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.landing .intro-text h1 span{
+    color: #333;
+}
+
+.landing .intro-text p{
+    font-size: 19px;
+    line-height: 1.8;
+}
+/* End Landing Section */
+
+
+/* Start Features Section */
+
+.features{
+    padding: 100px;
+    background-color: #f6f6f6;
+    margin: auto;
+}
+
+.features .wrapped-cont{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+}
+
+.features .wrapped-cont .card{
+    width: 33.33333333333333%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 2px #b6afaf;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.features .wrapped-cont .card i{
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.features .wrapped-cont .card h2{
+    font-size: 21px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.features .wrapped-cont .card p{
+    color: rgb(151, 151, 151);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px){
+    .features .wrapped-cont{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .features .wrapped-cont .card{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+.features .wrapped-cont .card:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* End Features Section */
+
+.services .container{
+    padding: 50px;
+    text-align: center;
+}
+
+.services .container .servicesC{
+    color: #EBECED;
+    font-size: 90px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.services .container .servSection{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.services .container .servSection .left{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.services .container .servSection .left .card{
+    width: 50%;
+}
+
+.services .container .servSection .left
+
+.services .container .servSection .right{
+    width: 20%;
+}
